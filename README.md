@@ -12,15 +12,25 @@ Moduł ESP8266 NodeMCU v2 został wybrany ze względu na:
 ## Środowisko
 Płytkę ESP8266 można zaprogramować za pomocą Arduino IDE. Niestety nowsze wersje tego środowiska (v2+) są niekompatybilne z wieloma istniejącymi bibliotekami. W związku z tym projekt zbudowaliśmy za pomocą dedykowanego mikroprocesorom środowiska PlatformIO instalowanego jako wtyczka do Visual Studio Code.
 
-<!-- platform io installation -->
+### Instalacja
+Żeby uruchomić PlatformIO IDE trzeba zainstalować:
+- [pythona](https://www.python.org/downloads/) w wersji co najmniej 3.6
+- środowisko [VS Code](https://code.visualstudio.com/download)
+- wtyczkę [Platform IO](https://docs.platformio.org/en/latest/integration/ide/vscode.html#ide-vscode)
+
+
 <!-- dodanie płytki -->
 <!-- sterowniki -->
 
+### Programowanie płytki
+
 ## Prototyp
-<!-- płytka ESP8266 NodeMCU -->
-<!-- schemat -->
+<!-- schemat układu -->
 <!-- zdjęcia -->
 
 ## Testy i kalibracja
+<!-- kacprowa opowieść -->
+<!-- zebrane dane -->
 
 ## Interfejs web
+![](images/image5.png)
