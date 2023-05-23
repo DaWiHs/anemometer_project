@@ -29,7 +29,10 @@ Płytkę ESP8266 można zaprogramować za pomocą Arduino IDE. Niestety nowsze w
 <!-- zdjęcia -->
 
 ## Testy i kalibracja
-<!-- kacprowa opowieść -->
+Testowanie oraz „strojenie” naszego wiatraka odbywało się w następujący sposób.
+Na początek warunki, może i nie były idealne, ale wystarczające. Bezwietrzny i dość ciepły wieczór towarzyszył naszym zmaganiom.
+Następnie, miejsce. Uznaliśmy, że parking pod galerią oraz supermarketem Auchan, będzie idealnym miejscem do przeprowadzenia naszych prób. Pomimo godzin wieczornych, osoby trzecie potrafiły się dość dziwnie na nas patrzeć, aczkolwiek nie powstrzymało nas to przed dokonaniem upragnionych pomiarów.
+Sedno sprawy, sam test. Wystawiliśmy wiatrak za okno mając nadzieję, że prędkość nie będzie na tyle duża, aby porwać go z naszych rąk. Następnie z precyzją szwajcarskiego zegarka jechaliśmy prawie pustym parkingiem na wskroś, samochodem marki audi, biorąc szczególnie pod uwagę prędkości przez nas wyznaczone: 10,20 oraz 30 kilometrów na godzinę, dającymi nam możliwość wystrojenia wiatraka i zapisywaliśmy wszystkie zebrane dane.Rezultat końcowy i wyniki. Wyniki jakie uzyskaliśmy prezentują się następująco:
 <!-- zebrane dane -->
 
 ## Interfejs web
