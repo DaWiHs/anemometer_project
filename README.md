@@ -1,4 +1,6 @@
 # Anemometr
+![](images/diagram_white.png)
+
 Stacja mierząca prędkość wiatru oparta o płytkę ESP8266 i interfejs web wyświetlający na bieżąco wyniki pomiarów.
 Projekt zespołowy został wykonany w ramach zajęć na kierunku Informatyka Przemysłowa na Filii JG Politechniki Wrocławskiej.
 
