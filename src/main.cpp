@@ -18,10 +18,6 @@ const char *password = "Mordor32";
 AsyncWebServer server(80);
 AsyncWebSocket webSocket("/ws");
 
-// LDR Pin
-// static int sensorVal = 0;
-// const int ANALOG_READ_PIN = A0;
-
 // speed variables
 unsigned long last_reading_time = 0;
 double rotations_per_second = 0;
@@ -49,7 +45,7 @@ void onEvent(AsyncWebSocket *server, AsyncWebSocketClient *client, AwsEventType 
   else if (type == WS_EVT_DISCONNECT)
   {
     // client disconnected
-    os_printf("ws[%s][%u] disconnect: %u\n", server->url(), client->id());
+    os_printf("ws[%s][%u] disconnect: %u\n", server->url(), client->id(), client->id());
   }
   else if (type == WS_EVT_ERROR)
   {
@@ -72,23 +68,18 @@ void onEvent(AsyncWebSocket *server, AsyncWebSocketClient *client, AwsEventType 
 void readLDRValue()
 {
   // Read variable set by interrupts
-  // int tempSensorVal = 10 + rand()%10;
-
-    // send message to clients when Connected
-    webSocket.printfAll(std::to_string(rotations_per_second).c_str());
+  // send message to clients when Connected
+  int rotation_speed = 3 * rotations_per_second * rotations_per_second + 10.2 * rotations_per_second;
+  
+  webSocket.printfAll(std::to_string(rotation_speed).c_str());
 }
 
 void print_readings() {
-  Serial.printf("time/revolution:  %d\n", time_interval_millis);
-  Serial.println(rotations_per_second);
+  Serial.printf("SPR:  %d\n", time_interval_millis);
+  Serial.printf("RPS: %f\n", rotations_per_second);
 }
 
-// void blink_led() {
-//   digitalWrite(D0, HIGH);
-//   delay(100);
-//   digitalWrite(D0, LOW);
-// }
-
+// Calculate RPS
 void update_velocity(int time_interval_millis) {
   rotations_per_second = 1.0/double(time_interval_millis)*1000.0;
 }
@@ -116,10 +107,10 @@ IRAM_ATTR void isr() {
     }
   }
 
-  // _debug print sensor number
+  // _debug print sensor iteration number
   Serial.printf(" %d ", iter++);
 
-  // blink_led(); 10 - 0.9 | 20 - 1.4 | 30 - 1.9
+  // 10 - 0.9 | 20 - 1.4 | 30 - 1.9
   // read speed 
   
   // Serial.printf("current time:  %d\n", current_time);
@@ -136,13 +127,8 @@ IRAM_ATTR void isr() {
 
 void setup()
 {
-//   pinMode(D0, OUTPUT);  // led
-//   digitalWrite(D0, LOW);
-
+  // Attach sensor falling to handler
   attachInterrupt(digitalPinToInterrupt(D3), isr, FALLING);
-
-  // delete later
-  srand((unsigned) time(NULL));
 
   Serial.begin(115200);
   Serial.println("Starting the Real-time Chart display of Sensor Readings ..");
@@ -199,50 +185,3 @@ void loop()
   delay(2000);
 
 }
-
-
-
-// #include <Arduino.h>
-
-// unsigned long last_reading_time = 0;
-// double rotations_per_second = 0;
-// int time_interval_millis = 1;
-
-// void print_readings() {
-//   Serial.printf("time/revolution:  %d\n", time_interval_millis);
-//   Serial.println(rotations_per_second);
-// }
-
-// void blink_led() {
-//   digitalWrite(D0, HIGH);
-//   delay(100);
-//   digitalWrite(D0, LOW);
-// }
-
-// void update_velocity(int time_interval_millis) {
-//   rotations_per_second = 1/double(time_interval_millis)*1000;
-// }
-
-// IRAM_ATTR void isr() {
-//   blink_led();
-//   int current_time = millis();
-//   time_interval_millis = current_time - last_reading_time;
-//   last_reading_time = current_time;
-//   update_velocity(time_interval_millis);
-//   print_readings();
-// }
-
-
-// void setup() {
-//   pinMode(D0, OUTPUT);  // led
-//   digitalWrite(D0, LOW);
-
-//   Serial.begin(115200);
-//   Serial.println("\n\nHall sensor test");
-
-//   attachInterrupt(digitalPinToInterrupt(D3), isr, FALLING);
-// }
-
-// void loop() {
-
-// }
