@@ -62,4 +62,6 @@ Wyniki jakie uzyskaliśmy prezentują się następująco:
 ![](images/wykres.jpg)
 
 ## Interfejs web
+Dane na bieżąco można wyświetlić na dowolnym urządzeniu znajdującym się w tej samej sieci, co stacja. Adres IP strony jest podawany przez serial monitor przy wgrywaniu programu na płytkę.
+
 ![](images/image5.png)
