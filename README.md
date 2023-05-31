@@ -28,7 +28,10 @@ Płytkę ESP8266 można zaprogramować za pomocą Arduino IDE. Niestety nowsze w
 
 ## Prototyp
 <!-- schemat układu -->
-<!-- zdjęcia -->
+
+![](images/top_down.jpg)
+
+![](images/side.jpg)
 
 ## Testy i kalibracja
 Testowanie oraz „strojenie” naszego wiatraka odbywało się w następujący sposób.  
