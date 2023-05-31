@@ -40,6 +40,7 @@ Projekt używa systemu plików `LittleFS` do zapisu danych - plików interfejsu 
 
 ## Prototyp
 <!-- schemat układu -->
+![](images/Crkt.png)
 
 ![](images/top_down.jpg)
 
