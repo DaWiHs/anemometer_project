@@ -42,6 +42,16 @@ board_build.filesystem = littlefs
 
 >Dane pomiarowe nie są zapisywane ze względu na ograniczenia pamięci flash. Przy regularnym zapisywaniu danych (co parę sekund) pamięć przestałaby działać po paru tygodniach.
 
+### Wgrywanie programu
+Płytkę programuje się z panelu PlatformIO na pasku VS Code:
+`Project Tasks > nodemcuv2 > General > Upload and Monitor`
+
+Wgrywanie programu nie ma wpływu na dane, które wgrywa się osobno przez system plików.
+
+### Wgrywanie plików
+Pliki wgrywane są przez:
+`Project Tasks > nodemcuv2 > Platform > Upload Filesystem Image`
+
 ## Prototyp
 <!-- schemat układu -->
 ![](images/Crkt.png)
