@@ -35,6 +35,10 @@ Projekt używa systemu plików `LittleFS` do zapisu danych - plików interfejsu 
 // main.cpp
 #include <LittleFS.h>
 ```
+```ini
+; platformio.ini
+board_build.filesystem = littlefs
+```
 
 >Dane pomiarowe nie są zapisywane ze względu na ograniczenia pamięci flash. Przy regularnym zapisywaniu danych (co parę sekund) pamięć przestałaby działać po paru tygodniach.
 
