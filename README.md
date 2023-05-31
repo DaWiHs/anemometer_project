@@ -20,11 +20,23 @@ Płytkę ESP8266 można zaprogramować za pomocą Arduino IDE. Niestety nowsze w
 - środowisko [VS Code](https://code.visualstudio.com/download)
 - wtyczkę [Platform IO](https://docs.platformio.org/en/latest/integration/ide/vscode.html#ide-vscode)
 
+### Konfiguracja sieci WiFi
 
-<!-- dodanie płytki -->
-<!-- sterowniki -->
+Stacja łączy się ze statycznie zdefiniowaną siecią wifi. Id i hasło sieci zmienia się przez zmienne:
+```cpp
+// main.cpp
+const char *ssid = "network_name";
+const char *password = "wifi_password";
+```
 
-### Programowanie płytki
+### System plików
+Projekt używa systemu plików `LittleFS` do zapisu danych - plików interfejsu web. 
+```cpp
+// main.cpp
+#include <LittleFS.h>
+```
+
+>Dane pomiarowe nie są zapisywane ze względu na ograniczenia pamięci flash. Przy regularnym zapisywaniu danych (co parę sekund) pamięć przestałaby działać po paru tygodniach.
 
 ## Prototyp
 <!-- schemat układu -->
